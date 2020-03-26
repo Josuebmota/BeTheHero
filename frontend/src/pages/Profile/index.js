@@ -15,6 +15,7 @@ export default function Profile() {
 
   const ongId = localStorage.getItem('ongId')
   const ongName = localStorage.getItem('ongName')
+  console.log(ongId, ongName)
 
   const history = useHistory()
 

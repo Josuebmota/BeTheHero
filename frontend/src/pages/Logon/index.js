@@ -20,7 +20,7 @@ export default function Logon() {
     try {
       const res = await api.post('session', { id })
 
-      localStorage.setItem('ondId', id);
+      localStorage.setItem('ongId', id);
       localStorage.setItem('ongName', res.data.name);
 
       history.push('/profile')
