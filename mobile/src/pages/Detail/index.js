@@ -13,7 +13,7 @@ export default function Details() {
   const route = useRoute()
 
   const incident = route.params.incident
-  const message = `Olá ${incident.name}, estou entradoo em contato pois de gostaria de ajudar no caso "${incident.title}" com valor de R$${incident.value}`
+  const message = `Olá ${incident.name}, estou entrando em contato pois de gostaria de ajudar no caso "${incident.title}" com valor de R$${incident.value}`
 
   function navigateBack() {
     navigation.goBack()
@@ -58,12 +58,12 @@ export default function Details() {
 
         <Text style={styles.heroDescription}>Entre em contato: </Text>
 
-        <View style={styles.actionText}>
-          <TouchableOpacity style={styles.actionText} onPress={sendWhatsapp}>
+        <View style={styles.actions}>
+          <TouchableOpacity style={styles.action} onPress={sendWhatsapp}>
             <Text style={styles.actionText}>WhatsApp</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.actionText} onPress={sendMail}>
+          <TouchableOpacity style={styles.action} onPress={sendMail}>
             <Text style={styles.actionText}>E-mail</Text>
           </TouchableOpacity>
         </View>

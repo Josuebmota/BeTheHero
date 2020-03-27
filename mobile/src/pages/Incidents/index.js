@@ -15,7 +15,7 @@ export default function Incidents() {
   const [page, setPage] = useState(1)
   const [loading, setLoading] = useState(false)
 
-  const navigation = navigation()
+  const navigation = useNavigation()
 
   function navigateToDetail(incident) {
     navigation.navigate('Detail', { incident })
@@ -26,18 +26,18 @@ export default function Incidents() {
       return
     }
 
-    if (tota > 0 && incidents.length === total) {
+    if (total > 0 && incidents.length === total) {
       return
     }
 
     setLoading(true)
 
-    const reponse = await api.get('incidents', {
+    const res = await api.get('incidents', {
       params: { page }
     });
 
-    setIncidents([...incidents, ...response.data])
-    setTotal(reponse.headers['x-total-count'])
+    setIncidents([...incidents, ...res.data])
+    setTotal(res.headers['x-total-count'])
     setPage(page + 1)
     setLoading(false)
   }
@@ -62,7 +62,7 @@ export default function Incidents() {
 
       <FlatList
         style={styles.incidentList}
-        data={[1, 2, 3]}
+        data={incidents}
         keyExtractor={incident => String(incident.id)}
         showsVerticalScrollIndicator={false}
         onEndReached={loadIncidents}
