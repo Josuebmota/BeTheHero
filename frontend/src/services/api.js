@@ -1,7 +1,10 @@
 import axios from 'axios';
 
+//const URL = 'https://localhost:3333'
+const URL = 'https://beheros.herokuapp.com'
+
 const api = axios.create({
-  baseURL: 'http://localhost:3333'
+  baseURL: URL
 })
 
 export default api;
