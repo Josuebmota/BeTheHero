@@ -26,13 +26,14 @@ Primeiramente foi feito o deploy, na plataforma Heroku, tal api pode ser acessad
 
 1. Criar Ongs */ongs*
 Utilizado o metodo Http Post
-			{
-				"name": "ProjectCoronga",
-				"email": "josuebatistam1@gmail.com",
-				"whatsapp": "85987474842",
-				"city": "Fortaleza",
-				"uf": "CE"
-			}
+
+		{
+			"name": "Ong",
+			"email": "ongs@gmail.com",
+			"whatsapp": "999999999",
+			"city": "Fortaleza",
+			"uf": "CE"
+		}
 
 2. Listar Ongs */ongs*
 Utilizado o metodo Http Get
