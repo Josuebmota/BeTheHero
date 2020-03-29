@@ -75,7 +75,7 @@ Foi feito o deploy na plataforma Netlify, e o ambiente web pode ser visto no lin
 
 Foi gerado o apk pelo Expo, você pode baixar no link abaixo:
 
-- [BeHeros](https://beheros.netlify.com/)
+- [BeHeros](https://drive.google.com/drive/folders/1JLWERA4AshPlNFWyFBJY6hWhxXKiljrY?usp=sharing)
 
 
 ## Como executar o projeto
