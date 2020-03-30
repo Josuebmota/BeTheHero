@@ -25,9 +25,13 @@ module.exports = {
     try {
       const ongs = await connection('ongs').select('*')
 
+      if (ongs.length == 0) {
+        return res.status(404).json({ erro: "Nenhuma ong cadastrada" })
+      }
+
       return res.status(200).json(ongs)
     } catch (err) {
-      return res.status(401).json({ erro: "Erro ao listar" })
+      return res.status(400).json({ erro: "Erro ao listar" })
     }
   }
 }

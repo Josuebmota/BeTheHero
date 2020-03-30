@@ -41,6 +41,10 @@ module.exports = {
 
       res.header('X-Total-Count', count['count(*)']);
 
+      if (incidents.length == 0) {
+        return res.status(200).json({ erro: "Nenhum incidente cadastrado" })
+      }
+
       return res.status(200).json(incidents)
     } catch (err) {
       return res.status(400).json({ erro: "Erro ao listar" })
