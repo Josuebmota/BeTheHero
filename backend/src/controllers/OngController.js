@@ -3,22 +3,31 @@ const connection = require('../database/connection')
 
 module.exports = {
   async create(req, res) {
-    let { name, email, whatsapp, city, uf } = req.body;
+    try {
+      let { name, email, whatsapp, city, uf } = req.body;
 
-    const id = generateUniqueId()
+      const id = generateUniqueId()
 
-    whatsapp = '+55' + whatsapp
+      whatsapp = '+55' + whatsapp
 
-    await connection('ongs').insert({
-      id, name, email, whatsapp, city, uf
-    })
+      await connection('ongs').insert({
+        id, name, email, whatsapp, city, uf
+      })
 
-    return res.json({ id })
+      return res.status(201).json({ id })
+    } catch (err) {
+      return res.status(401).json({ erro: "Erro ao criar" })
+    }
+
   },
 
   async index(req, res) {
-    const ongs = await connection('ongs').select('*')
+    try {
+      const ongs = await connection('ongs').select('*')
 
-    return res.json(ongs)
+      return res.status(200).json(ongs)
+    } catch (err) {
+      return res.status(401).json({ erro: "Erro ao listar" })
+    }
   }
 }
