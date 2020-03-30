@@ -10,6 +10,12 @@ module.exports = {
 
       whatsapp = '+55' + whatsapp
 
+      const ongs = await connection('ongs').where('email', email).select('email').first()
+
+      if (ongs) {
+        return res.status(406).json({ erro: "Email já existente" })
+      }
+
       await connection('ongs').insert({
         id, name, email, whatsapp, city, uf
       })

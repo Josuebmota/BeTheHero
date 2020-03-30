@@ -20,6 +20,7 @@ routes.get('/incidents', IncidentValidation.get(), IncidentCotroller.index)
 routes.delete('/incidents/:id', IncidentValidation.delete(), IncidentCotroller.delete)
 
 routes.post('/session', SessionValidation.post(), SessionController.create)
+routes.get('/forgetpassword', SessionValidation.get(), SessionController.forgotPassword)
 
 routes.get('/profile', ProfileValidation.get(), ProfileController.index)
 
