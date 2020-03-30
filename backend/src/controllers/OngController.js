@@ -1,4 +1,3 @@
-const vmasker = require('vanilla-masker')
 const generateUniqueId = require('../utils/generateUniqueId')
 const connection = require('../database/connection')
 
@@ -9,8 +8,6 @@ module.exports = {
     const id = generateUniqueId()
 
     whatsapp = '+55' + whatsapp
-
-    console.log(whatsapp)
 
     await connection('ongs').insert({
       id, name, email, whatsapp, city, uf

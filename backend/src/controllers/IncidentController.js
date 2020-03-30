@@ -5,11 +5,14 @@ module.exports = {
     const { title, description, value } = req.body;
     const ong_id = req.headers.authorization;
 
-    const [id] = await connection('incidents').insert({
+    console.log(title, description, value, ong_id)
+
+    await connection('incidents').insert({
       title, description, value, ong_id
     })
 
-    return res.json({ id })
+    return res.json({ title, description, value, ong_id })
+
   },
 
   async index(req, res) {

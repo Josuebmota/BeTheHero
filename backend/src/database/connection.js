@@ -2,18 +2,10 @@ const knex = require('knex');
 
 const configuration = require('../../knexfile')
 
-const config
-switch (process.env.NODE_ENV) {
-  case 'teste':
-    config = configuration.test
-    break
-  case 'dev':
-    config = configuration.development
-    break
-  case 'start':
-    config = configuration.production
-    break
-}
+//Desenvolvimento ou Teste
+//const config = process.env.NODE_ENV == 'test' ? configuration.test : configuration.development
+
+const config = configuration.production
 
 const connection = knex(config);
 
