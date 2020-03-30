@@ -8,7 +8,7 @@ module.exports = {
       const ongs = await connection('ongs').where('id', ong_id).select('id').first()
 
       if (!ongs) {
-        return res.status(200).json({ erro: "Nenhum ong encontrada" })
+        return res.status(404).json({ erro: "Nenhuma ong encontrada" })
       }
 
       const incidents = await connection('incidents')

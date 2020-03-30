@@ -72,7 +72,33 @@ module.exports = {
     } catch (err) {
       return res.status(400).json({ error: "Erro ao deletar" })
     }
+  },
 
+  async update(req, res) {
+    const { id } = req.params;
+    const ong_id = req.headers.authorization;
+    let newIncident = req.body;
 
-  }
+    try {
+      if (newIncident = []) {
+        return res.status(400).json({ error: 'Não possui dados pra atualizar' })
+      }
+      const incident = await connection('incidents')
+        .where('id', id)
+        .select('id', 'ong_id')
+        .first();
+
+      if (incident.ong_id != ong_id) {
+        return res.status(401).json({ error: 'Operação não permitida' })
+      }
+
+      await connection('incidents').where('id', id).update(
+        newIncident)
+
+      return res.status(201).json({ newIncident })
+    } catch (err) {
+      return res.status(400).json({ error: "Erro ao atualizar" })
+    }
+
+  },
 }

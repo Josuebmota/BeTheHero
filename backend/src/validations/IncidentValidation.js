@@ -26,5 +26,12 @@ module.exports = {
         id: Joi.number().required()
       })
     })
-  }
+  },
+  put() {
+    return celebrate({
+      [Segments.HEADERS]: Joi.object({
+        authorization: Joi.string().required()
+      }).unknown()
+    })
+  },
 }

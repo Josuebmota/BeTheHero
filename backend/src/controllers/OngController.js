@@ -39,5 +39,48 @@ module.exports = {
     } catch (err) {
       return res.status(400).json({ erro: "Erro ao listar" })
     }
-  }
+  },
+  async delete(req, res) {
+    const ong_id = req.headers.authorization;
+
+    try {
+      const ong = await connection('ongs').where('id', ong_id).select('id').first()
+
+      if (!ong) {
+        return res.status(404).json({ erro: "Nenhuma ong encontrada" })
+      }
+
+      await connection('ongs').where('id', ong_id).delete();
+      await connection('incidents').where('ong_id', ong_id).delete()
+      return res.status(204).json()
+
+    } catch (err) {
+      return res.status(400).json({ error: "Erro ao deletar" })
+    }
+  },
+  async update(req, res) {
+    const ong_id = req.headers.authorization;
+    let newOng = req.body;
+    try {
+
+      const oldOng = await connection('ongs').where('id', ong_id).select('email').first()
+      const ongs = await connection('ongs').where('email', newOng.email).select('email').first()
+
+      if (ongs && newOng.email != oldOng.email) {
+        return res.status(406).json({ erro: "Email já existente" })
+      }
+
+      if (newOng.whatsapp != undefined) {
+        newOng.whatsapp = '+55' + newOng.whatsapp
+      }
+
+      await connection('ongs').where('id', ong_id).update(
+        newOng)
+
+      return res.status(201).json({ newOng })
+
+    } catch (err) {
+      return res.status(400).json({ error: "Erro ao atualizar" })
+    }
+  },
 }
