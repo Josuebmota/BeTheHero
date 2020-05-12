@@ -1,3 +1,7 @@
+![](https://github.com/Josuebmota/BeTheHero/issues/1#issue-616884804)
+
+# Semana Omnistack 11.0
+
 ## Tecnologias utilizadas
 
 - ReactJs
@@ -14,18 +18,20 @@
 
 ## Informações
 
-O projeto criando seguindo as instruções lecionadas pelo pessoal da RockeSeat, na semana OmniStack 11.0. Com o intuito de levar o aprendizado dessa Stack.
-A aplicação consiste, em cadastrar uma ONG, onde ela seria capaz de atribuir incidentes, para que pessoas pudessem contribuir com aquela causa, dai vem esse sugestivo nome, Be The Hero
+O projeto foi criado seguindo as instruções lecionadas pelo pessoal da RockeSeat, na semana OmniStack 11.0. Com o intuito de levar o aprendizado dessas tecnologias.
+
+A aplicação consiste, em cadastrar uma ONG, onde ela seria capaz de atribuir incidentes, para que pessoas pudessem contribuir com aquela causa, dai vem esse sugestivo nome, Be The Hero.
+
+Você pode acessar as etapas do projeto nos seguintes links:
+> [BackEnd](https://beheros.herokuapp.com)
+
+> [Front](https://beheros.netlify.com/)
+
+> [Mobile](https://drive.google.com/drive/folders/1JLWERA4AshPlNFWyFBJY6hWhxXKiljrY?usp=sharing)
 
 ## Funcionalidades
 
-> 1 - Rotas de Criação
-
-Primeiramente foi feito o deploy, na plataforma Heroku, tal api pode ser acessada no link abaixo:
-- [BeHeros](https://beheros.herokuapp.com)
-
 1. Criar Ongs */ongs*
-Utilizado o metodo Http Post
 
 		{
 			"name": "Ong",
@@ -36,27 +42,23 @@ Utilizado o metodo Http Post
 		}
 
 2. Listar Ongs */ongs*
-Utilizado o metodo Http Get
 
 3. Criar Incidents */incidents*
-Utilizado o metodo Http Post
 e o Header de Authorization com o id da ong
 
 		{
 			"title": "Caso 1",
-			"description": "Morbidus",
-			"value": 12223
+			"description": "Cachorro abandonado",
+			"value": 21
 		}
+   obs: É necessario utilizar o Header de Authorization com o id da ong
 
-4. Deletar Incidents */incidents/id*
-Utilizado o metodo Http Put
-e o Header de Authorization com o id da ong
+
+4. Deletar Incidents */incidents/id* <br> obs: É necessario utilizar o Header de Authorization com o id da ong
 
 5. Listar Incidents */incidents*
-Utilizado o metodo Http Get
 
 6. Login  */session*
-Utilizado o metodo Http Post
 
 		{
 			"id": "013d5051"
@@ -66,26 +68,18 @@ Utilizado o metodo Http Post
 Utilizado o metodo Http Get
 e o Header de Authorization com o id da ong
 
-> 2 - Front
-
-Foi feito o deploy na plataforma Netlify, e o ambiente web pode ser visto no link abaixo:
-
-- [BeHeros](https://beheros.netlify.com/)
-
-> 3 - Mobile
-
-Foi gerado o apk pelo Expo, você pode baixar no link abaixo:
-
-- [BeHeros](https://drive.google.com/drive/folders/1JLWERA4AshPlNFWyFBJY6hWhxXKiljrY?usp=sharing)
-
-
 ## Como executar o projeto
 
 Caso queira executar a aplicação em sua maquina siga os seguintes passos:
-1 - Após clonar o projeto, entre em cada pasta e execute o seguinte comando, para baixar as dependências:
+
+1. Após clonar o projeto, entre em cada pasta e execute o seguinte comando, para baixar as dependências:
 
 	npm i
 
-2 - Mude o endereço da api para localhost nas seguintes pastas [Front](https://github.com/Josuebmota/BeTheHero/blob/master/frontend/src/services/api.js) e [Mobile](https://github.com/Josuebmota/BeTheHero/blob/master/mobile/src/services/api.js)
+2. Mude o endereço da api para localhost nas seguintes pastas [Front](https://github.com/Josuebmota/BeTheHero/blob/master/frontend/src/services/api.js) e [Mobile](https://github.com/Josuebmota/BeTheHero/blob/master/mobile/src/services/api.js).
 
-3 - Após isso execute primeiro o Back e em seguida o Front ou Mobile
+3. Após isso execute primeiro o Back e em seguida o Front, no caso do Mobile é necessario que você utilize um emulador ou baixe o expo no seu celular.
+
+### [](<[https://github.com/Josuebmota/BeTheHero](https://github.com/Josuebmota/BeTheHero)#autor>)Autor
+
+- **Josué Batista Mota** - [GitHub](https://github.com/Josuebmota) - Email: [josuebatistam1@gmail.com](mailto:josuebatistam1@gmail.com)
