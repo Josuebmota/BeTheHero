@@ -1,4 +1,4 @@
-![](https://github.com/Josuebmota/BeTheHero/issues/1#issue-616884804)
+![](https://user-images.githubusercontent.com/34459397/81734055-5367a600-9469-11ea-9513-266b085751b2.png)
 
 # Semana Omnistack 11.0
 
