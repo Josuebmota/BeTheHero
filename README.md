@@ -2,6 +2,13 @@
 
 # Semana Omnistack 11.0
 
+Links das etapas do projeto:
+> [BackEnd](https://beheros.herokuapp.com)
+
+> [Front](https://beheros.netlify.com/)
+
+> [Mobile](https://drive.google.com/drive/folders/1JLWERA4AshPlNFWyFBJY6hWhxXKiljrY?usp=sharing)
+
 ## Tecnologias utilizadas
 
 - ReactJs
@@ -21,13 +28,6 @@
 O projeto foi criado seguindo as instruções lecionadas pelo pessoal da RockeSeat, na semana OmniStack 11.0. Com o intuito de levar o aprendizado dessas tecnologias.
 
 A aplicação consiste, em cadastrar uma ONG, onde ela seria capaz de atribuir incidentes, para que pessoas pudessem contribuir com aquela causa, dai vem esse sugestivo nome, Be The Hero.
-
-Você pode acessar as etapas do projeto nos seguintes links:
-> [BackEnd](https://beheros.herokuapp.com)
-
-> [Front](https://beheros.netlify.com/)
-
-> [Mobile](https://drive.google.com/drive/folders/1JLWERA4AshPlNFWyFBJY6hWhxXKiljrY?usp=sharing)
 
 ## Funcionalidades
 
